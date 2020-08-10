@@ -1,0 +1,15 @@
+{
+  "name": "dandrews_generator",
+  "version": "1.0.0",
+  "description": "This AI model generates text that generates passages of text written in the style of Victorian Premiere Daniel Andrews.",
+  "main": "getData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Malcolm",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^16.4.0",
+    "request": "^2.88.2"
+  }
+}
