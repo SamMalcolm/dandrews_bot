@@ -54,23 +54,28 @@ const sleep = ms => {
 
 const init = async () => {
 	for (let i = 1; i < 77; i++) {
+		console.log(i)
 		let statement = await getStatement(i);
-		fs.writeFile('./statements/statement_' + i + '.txt', statement, (err) => {
-			if (err) {
-				console.log(error);
-			} else {
-				console.log("File written");
-			}
-		})
+		if (statement) {
+			fs.writeFile('./statements/statement_' + i + '.txt', statement, async (err) => {
+				if (err) {
+					console.log(error);
+				} else {
+					console.log("File written");
+				}
+				await sleep(500);
+			})
+		}
 	}
 }
+init();
 
-getStatement(67).then((statement) => {
-	fs.writeFile('./statements/statement_' + 67 + '.txt', statement, (err) => {
-		if (err) {
-			console.log(error);
-		} else {
-			console.log("File written");
-		}
-	})
-})
+// getStatement(67).then((statement) => {
+// 	fs.writeFile('./statements/statement_' + 67 + '.txt', statement, (err) => {
+// 		if (err) {
+// 			console.log(error);
+// 		} else {
+// 			console.log("File written");
+// 		}
+// 	})
+// })

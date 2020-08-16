@@ -1,3 +1,4 @@
 .DS_Store
 /node_modules/
 /statements/*.txt
+*.h5
