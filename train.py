@@ -46,6 +46,7 @@ def init():
 			input_sentances.append(n_gram_sequence)
 
 	max_sequences_len= max([len(x)  for x in input_sentances])
+	print(max_sequences_len)
 	input_sentances = np.array(pad_sequences(input_sentances, maxlen=max_sequences_len, padding='pre'))
 	
 	xs = input_sentances[:,:-1]
